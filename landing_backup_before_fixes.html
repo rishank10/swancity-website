@@ -1,0 +1,3225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swansight | AI-Powered Customer Experience Platform</title>
+    <meta name="description" content="Transform customer interactions with Swansight's AI + Data + Workflow platform. Engage, convert, and delight your customers with the Agent OS built for knowledge work.">
+    <link rel="canonical" href="https://swansight.com">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://swansight.com">
+    <meta property="og:title" content="Swansight | AI-Powered Customer Experience Platform">
+    <meta property="og:description" content="Transform customer interactions with Swansight's AI + Data + Workflow platform.">
+    <meta property="og:image" content="https://swansight.com/og-image.jpg">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Swansight | AI-Powered Customer Experience Platform">
+    <meta name="twitter:description" content="Transform customer interactions with Swansight's AI + Data + Workflow platform.">
+    <meta name="twitter:image" content="https://swansight.com/twitter-image.jpg">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Swansight",
+      "url": "https://swansight.com",
+      "logo": "https://swansight.com/logo.svg",
+      "sameAs": [
+        "https://linkedin.com/company/swansight"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Swansight",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "AI-Powered Customer Experience Platform"
+    }
+    </script>
+    
+    <!-- Google Fonts - Match exactly with reference site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Updated funky soft brighter colors
+                        deepBlack: '#050505', 
+                        bgDark: '#0F0F0F',
+                        cardBg: '#161616',
+                        violetPink: '#D946EF',
+                        electricBlue: '#2563EB',
+                        mintGreen: '#10B981',
+                        mutedGray: '#94A3B8',
+                        accent: '#A855F7',
+                        neonPurple: '#B026FF',
+                        comicBlue: '#4169E1',
+                        softBlue: '#87CEEB',
+                        brightGreen: '#39FF14',
+                        pastelPink: 'rgba(255, 163, 235, 0.94)',
+                        pastelBlue: 'rgb(117, 197, 250)',
+                        pastelPurple: 'rgb(200, 149, 234)',
+                        pastelYellow: 'rgb(250, 234, 153)',
+                        pastelGreen: 'rgb(140, 178, 141)',
+                        pastelCream: 'rgb(253, 230, 186)'
+                    },
+                    fontFamily: {
+                        'sans': ['DM Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Three.js for true 3D disco ball -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom styles - matching reference site exactly -->
+    <style>
+        body {
+            background-color: #050505;
+            color: #FFFFFF;
+            font-family: 'DM Sans', 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Header styling matching reference site */
+        header {
+            background-color: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        header:hover {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Nav link hover animation - exact match to reference site */
+        .nav-link {
+            position: relative;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 4px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, #A855F7 0%, #D946EF 100%);
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover {
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Card styling matching reference site exactly */
+        .feature-card {
+            background-color: rgba(22, 22, 22, 0.8);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 32px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.3;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            border-radius: 16px;
+        }
+        
+        .feature-card:nth-child(1)::before {
+            background: linear-gradient(135deg, #B026FF, #D946EF);
+        }
+        
+        .feature-card:nth-child(2)::before {
+            background: linear-gradient(135deg, #4169E1, #87CEEB);
+        }
+        
+        .feature-card:nth-child(3)::before {
+            background: linear-gradient(135deg, #10B981, #39FF14);
+        }
+        
+        .feature-card:nth-child(4)::before {
+            background: linear-gradient(135deg, #D946EF, #B026FF);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+            filter: brightness(1.1);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 0.6;
+            transform: scale(1.03);
+        }
+        
+        /* Enhanced hover effects for intelligence cards */
+        .intelligence-card:hover h3 {
+            color: white !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .intelligence-card:hover p, 
+        .intelligence-card:hover .count-up,
+        .intelligence-card:hover .text-gray-400 {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        /* Custom styling for each intelligence card - matching testimonial design */
+        .intelligence-container .intelligence-card:nth-child(1):hover::before {
+            background: linear-gradient(135deg, #B026FF, #D946EF);
+            opacity: 0.7;
+            transform: scale(1.03);
+        }
+        
+        .intelligence-container .intelligence-card:nth-child(2):hover::before {
+            background: linear-gradient(135deg, #4169E1, #87CEEB);
+            opacity: 0.7;
+            transform: scale(1.03);
+        }
+        
+        .intelligence-container .intelligence-card:nth-child(3):hover::before {
+            background: linear-gradient(135deg, #10B981, #39FF14);
+            opacity: 0.7;
+            transform: scale(1.03);
+        }
+        
+        .intelligence-container .intelligence-card:nth-child(4):hover::before {
+            background: linear-gradient(135deg, #D946EF, #B026FF);
+            opacity: 0.7;
+            transform: scale(1.03);
+        }
+        
+        /* Heading styles matching reference site */
+        h1 {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        
+        h3 {
+            font-weight: 600;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #A855F7 0%, #D946EF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Button styling matching reference site */
+        .primary-button {
+            background: linear-gradient(90deg, #A855F7 0%, #D946EF 100%);
+            border-radius: 8px;
+            padding: 14px 28px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+        }
+        
+        .primary-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+        }
+        
+        /* Enhanced floating shapes - geometric design system */
+        .floating-shape {
+            position: fixed; /* To float throughout the site */
+            background: rgba(255, 255, 255, 0.075); /* Slightly increased from 0.06 for better visibility */
+            z-index: 0;
+            opacity: 0.7; /* Increased from 0.65 for better visibility */
+            pointer-events: none;
+            transform-origin: center;
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Increased from 0.12 for better visibility */
+            transition: transform 0.3s ease-in-out;
+            backdrop-filter: blur(3px); /* Glass effect */
+            -webkit-backdrop-filter: blur(3px);
+            box-shadow: 0 0 18px rgba(120, 120, 255, 0.2); /* Enhanced neon glow effect */
+            will-change: transform; /* Improves animation performance */
+            transform: translate3d(0, 0, 0); /* Force hardware acceleration */
+            animation: pulse-glow 5s infinite ease-in-out;
+            border-radius: 12px; /* Enhanced rounded corners for all shapes */
+        }
+        
+        /* Size variants - slightly larger for better visibility */
+        .floating-shape.tiny {
+            width: 26px;
+            height: 26px;
+        }
+        
+        .floating-shape.small {
+            width: 45px;
+            height: 45px;
+        }
+        
+        .floating-shape.medium {
+            width: 65px;
+            height: 65px;
+        }
+        
+        .floating-shape.large {
+            width: 90px;
+            height: 90px;
+        }
+        
+        /* Rounded square */
+        .floating-shape.rounded-square {
+            border-radius: 16px;
+        }
+        
+        /* Circle */
+        .floating-shape.circle {
+            border-radius: 50%;
+        }
+        
+        /* Parallelogram - eased out with rounded corners */
+        .floating-shape.parallelogram {
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            border-radius: 8px;
+        }
+        
+        /* Plus sign with rounded corners */
+        .floating-shape.plus {
+            clip-path: polygon(35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0% 65%, 0% 35%, 35% 35%);
+            border-radius: 8px;
+        }
+        
+        /* Hexagon with rounded corners */
+        .floating-shape.hexagon {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+            border-radius: 8px;
+        }
+        
+        /* Rhombus with rounded corners */
+        .floating-shape.rhombus {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            border-radius: 8px;
+        }
+        
+        /* Pentagon with rounded corners */
+        .floating-shape.pentagon {
+            clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 20% 100%, 0% 40%);
+            border-radius: 8px;
+        }
+        
+        /* Enhanced neon lighting effect */
+        .floating-shape::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            clip-path: inherit;
+            opacity: 0.85;
+            box-shadow: 0 0 10px rgba(200, 200, 255, 0.3) inset;
+        }
+        
+        /* Added stronger neon border glow effect */
+        .floating-shape::before {
+            content: '';
+            position: absolute;
+            inset: -2px; /* Slightly larger than the shape */
+            border-radius: inherit;
+            clip-path: inherit;
+            opacity: 0.7; /* Increased from 0.6 */
+            z-index: -1;
+            filter: blur(5px); /* Increased blur for more glow */
+        }
+        
+        /* Soft mint */
+        .floating-shape.mint::after {
+            background: linear-gradient(135deg, 
+                rgba(19, 206, 102, 0.15) 0%, 
+                rgba(19, 206, 102, 0.3) 100%);
+        }
+        .floating-shape.mint::before {
+            background: rgba(19, 206, 102, 0.4);
+            box-shadow: 0 0 15px rgba(19, 206, 102, 0.7);
+        }
+        
+        /* Soft cyan */
+        .floating-shape.cyan::after {
+            background: linear-gradient(135deg, 
+                rgba(6, 182, 212, 0.15) 0%, 
+                rgba(6, 182, 212, 0.3) 100%);
+        }
+        .floating-shape.cyan::before {
+            background: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.7);
+        }
+        
+        /* Soft purple */
+        .floating-shape.purple::after {
+            background: linear-gradient(135deg, 
+                rgba(147, 51, 234, 0.15) 0%, 
+                rgba(147, 51, 234, 0.3) 100%);
+        }
+        .floating-shape.purple::before {
+            background: rgba(147, 51, 234, 0.4);
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.7);
+        }
+        
+        /* Soft pink */
+        .floating-shape.pink::after {
+            background: linear-gradient(135deg, 
+                rgba(236, 72, 153, 0.15) 0%, 
+                rgba(236, 72, 153, 0.3) 100%);
+        }
+        .floating-shape.pink::before {
+            background: rgba(236, 72, 153, 0.4);
+            box-shadow: 0 0 15px rgba(236, 72, 153, 0.7);
+        }
+        
+        /* Soft blue */
+        .floating-shape.blue::after {
+            background: linear-gradient(135deg, 
+                rgba(59, 130, 246, 0.15) 0%, 
+                rgba(59, 130, 246, 0.3) 100%);
+        }
+        .floating-shape.blue::before {
+            background: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+        }
+        
+        /* Soft amber */
+        .floating-shape.amber::after {
+            background: linear-gradient(135deg, 
+                rgba(251, 191, 36, 0.15) 0%, 
+                rgba(251, 191, 36, 0.3) 100%);
+        }
+        .floating-shape.amber::before {
+            background: rgba(251, 191, 36, 0.4);
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.7);
+        }
+        
+        /* Main disco ball styling - corrected positioning */
+        .main-disco-ball {
+            position: absolute;
+            width: 260px; /* Adjusted for better proportions */
+            height: 260px;
+            top: -30px; /* Adjusted for better alignment with P */
+            left: -65px; /* Position to protrude from the P */
+            border-radius: 50%;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.9) 0%, 
+                rgba(180, 180, 180, 0.8) 20%, 
+                rgba(150, 150, 150, 0.4) 50%,
+                rgba(60, 60, 60, 0.3) 85%);
+            box-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.7),
+                0 0 60px rgba(168, 85, 247, 0.6),
+                0 0 90px rgba(217, 70, 239, 0.4);
+            z-index: -1; /* Behind the text */
+            transform-style: preserve-3d;
+            transform: rotate3d(1, 0.3, 0, 20deg); /* Earth-like tilt */
+            animation: disco-spin 20s linear infinite;
+            /* Hide 20% of the ball with a clip path - adjusted for positioning */
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%);
+            pointer-events: none;
+        }
+        
+        /* Mirror facets effect with grid - enhanced for better 3D look */
+        .main-disco-ball::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background-image: 
+                linear-gradient(90deg, transparent 92%, rgba(255, 255, 255, 0.9) 8%),
+                linear-gradient(0deg, transparent 92%, rgba(255, 255, 255, 0.9) 8%);
+            background-size: 15px 15px; /* Smaller facets */
+            background-position: center center;
+            opacity: 0.85;
+            mix-blend-mode: soft-light;
+            transform-style: preserve-3d;
+            transform: rotate(45deg); /* Offset grid for diamond pattern */
+            animation: disco-sparkle 3s ease infinite, disco-rotate 30s linear infinite;
+        }
+        
+        /* Add another layer for more complex facets */
+        .main-disco-ball::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            background: 
+                radial-gradient(
+                    circle at 30% 25%,
+                    rgba(255, 255, 255, 1) 0%,
+                    rgba(255, 255, 255, 0.6) 15%,
+                    rgba(255, 255, 255, 0) 40%
+                ),
+                radial-gradient(
+                    circle at 65% 60%,
+                    rgba(255, 255, 255, 0.8) 0%,
+                    rgba(255, 255, 255, 0.3) 25%,
+                    rgba(255, 255, 255, 0) 50%
+                );
+            filter: blur(2px);
+            opacity: 0.8;
+            mix-blend-mode: overlay;
+            animation: disco-highlight 6s ease-in-out infinite alternate;
+        }
+        
+        /* Add a third layer to create more realistic highlights */
+        .main-disco-ball-highlight {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: 
+                radial-gradient(
+                    circle at 30% 30%, 
+                    rgba(255, 255, 255, 0.9) 0%,
+                    rgba(255, 255, 255, 0.4) 20%,
+                    transparent 50%
+                );
+            z-index: 1;
+            pointer-events: none;
+            animation: disco-rotate-opposite 15s linear infinite;
+        }
+        
+        @keyframes disco-rotate {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+        
+        @keyframes disco-rotate-opposite {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+        
+        /* Key frame for the sparkle effect - more varied */
+        @keyframes disco-sparkle {
+            0% { opacity: 0.85; filter: brightness(1.0); }
+            25% { opacity: 0.95; filter: brightness(1.2); }
+            50% { opacity: 1; filter: brightness(1.4); }
+            75% { opacity: 0.9; filter: brightness(1.1); }
+            100% { opacity: 0.85; filter: brightness(1.0); }
+        }
+        
+        /* Keyframes for disco ball spinning like Earth with tilt */
+        @keyframes disco-spin {
+            0% { transform: rotate3d(1, 0.3, 0, 20deg) rotateY(0deg); }
+            100% { transform: rotate3d(1, 0.3, 0, 20deg) rotateY(360deg); }
+        }
+        
+        /* Top glitter/highlight effect */
+        .main-disco-ball::after {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 40%;
+            top: 5%;
+            left: 30%;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.8) 30%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            filter: blur(5px);
+            opacity: 0.9;
+            animation: disco-highlight 6s ease-in-out infinite alternate;
+        }
+        
+        /* Create a neon glow around the disco ball */
+        .disco-glow {
+            position: absolute;
+            top: -30px;
+            left: -65px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 
+                0 0 40px rgba(255, 20, 147, 0.5),
+                0 0 80px rgba(138, 43, 226, 0.4),
+                0 0 120px rgba(0, 191, 255, 0.3);
+            filter: blur(10px);
+            opacity: 0.6;
+            z-index: -2;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%);
+            animation: disco-glow 8s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+        
+        @keyframes disco-glow {
+            0% { opacity: 0.5; filter: blur(10px); }
+            50% { opacity: 0.7; filter: blur(15px); }
+            100% { opacity: 0.6; filter: blur(12px); }
+        }
+        
+        /* Position the disco ball correctly in the heading */
+        .hero-heading {
+            position: relative;
+        }
+        
+        /* Relative positioning for the P container */
+        .hero-heading span:first-child {
+            position: relative;
+            z-index: 1;
+            color: white; /* Ensure text is visible */
+        }
+        
+        /* The visible P text needs to be above the disco ball */
+        .hero-heading span:first-child > span:first-child {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Small disco balls */
+        .disco-ball {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 30% 30%, 
+                rgba(255, 255, 255, 0.95), 
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.1) 70%);
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 0 30px rgba(255, 255, 255, 0.8),
+                0 0 40px rgba(255, 255, 255, 0.4),
+                0 0 60px rgba(168, 85, 247, 0.3),
+                0 0 80px rgba(217, 70, 239, 0.2);
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+            transform-style: preserve-3d;
+            animation: rotate 20s linear infinite;
+        }
+        
+        .disco-ball::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%) 0 0 / 8px 8px,
+                linear-gradient(0deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%) 0 0 / 8px 8px;
+            border-radius: 50%;
+            animation: sparkle 3s linear infinite;
+        }
+        
+        .disco-ball::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: 20%;
+            width: 20%;
+            height: 20%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            filter: blur(5px);
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0.4; }
+            50% { opacity: 0.9; }
+            100% { opacity: 0.4; }
+        }
+        
+        /* Typewriter cursor effect */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: #FF6AD5; /* Match the typewriter text color */
+            margin-left: 4px;
+            animation: blink 0.7s infinite;
+            vertical-align: middle;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Process section styling */
+        .process-timeline {
+            position: relative;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(168, 85, 247, 0.5), rgba(217, 70, 239, 0.5));
+            transform: translateX(-50%);
+        }
+        
+        .process-step {
+            position: relative;
+            margin-bottom: 80px;
+        }
+        
+        .process-number {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+        
+        .process-step-left {
+            padding-right: calc(50% + 40px);
+        }
+        
+        .process-step-left .process-number {
+            right: calc(50% - 20px);
+        }
+        
+        .process-step-right {
+            padding-left: calc(50% + 40px);
+        }
+        
+        .process-step-right .process-number {
+            left: calc(50% - 20px);
+        }
+        
+        /* Process cards with solid color backgrounds */
+        .process-step:nth-child(1) .feature-card::before {
+            background: linear-gradient(135deg, #B026FF, #D946EF);
+        }
+        
+        .process-step:nth-child(2) .feature-card::before {
+            background: linear-gradient(135deg, #4169E1, #87CEEB);
+        }
+        
+        .process-step:nth-child(3) .feature-card::before {
+            background: linear-gradient(135deg, #10B981, #39FF14);
+        }
+        
+        .process-step:nth-child(4) .feature-card::before {
+            background: linear-gradient(135deg, #D946EF, #B026FF);
+        }
+        
+        /* Testimonial styling with infinite scroll - one card at a time */
+        .testimonial-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px; /* Increased padding to accommodate arrows outside cards */
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            position: relative;
+        }
+        
+        /* Base testimonial slide styles */
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 2rem;
+            box-sizing: border-box;
+            transition: all 0.5s ease-in-out;
+            opacity: 0.7;
+            transform: scale(0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* When the slide is active */
+        .testimonial-slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 5;
+        }
+        
+        /* The actual card within each slide */
+        .testimonial-card {
+            width: 100%;
+            max-width: 600px;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hover effect for cards */
+        .testimonial-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+        
+        /* Cloned slides styling */
+        .cloned-testimonial {
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+        
+        .cloned-testimonial.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        /* Navigation buttons for testimonials - moved further outward */
+        .testimonial-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .testimonial-nav:hover {
+            background: rgba(40, 40, 40, 0.9);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .testimonial-nav svg {
+            width: 24px;
+            height: 24px;
+            stroke-width: 2.5;
+        }
+        
+        .testimonial-nav-prev {
+            left: 10px;
+        }
+        
+        .testimonial-nav-next {
+            right: 10px;
+        }
+        
+        /* Testimonial cards with solid color backgrounds */
+        .testimonial-slide:nth-child(1)::before {
+            background: linear-gradient(135deg, #B026FF, #D946EF);
+        }
+        
+        .testimonial-slide:nth-child(2)::before {
+            background: linear-gradient(135deg, #4169E1, #87CEEB);
+        }
+        
+        .testimonial-slide:nth-child(3)::before {
+            background: linear-gradient(135deg, #10B981, #39FF14);
+        }
+
+        /* Intelligence section styling with infinite scroll */
+        .intelligence-carousel {
+            position: relative;
+            overflow: hidden;
+            padding: 40px 0;
+            will-change: transform;
+        }
+
+        .intelligence-container {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Smoother easing */
+            padding: 0 20px;
+            will-change: transform;
+            backface-visibility: hidden; /* Prevent flickering */
+            -webkit-backface-visibility: hidden;
+            transform: translateZ(0); /* Force hardware acceleration */
+        }
+
+        .intelligence-card {
+            flex: 0 0 calc(100% - 40px);
+            max-width: 100%;
+            transition: all 0.4s ease;
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+            background-color: rgba(30, 30, 30, 0.9); /* Solid color background */
+        }
+
+        /* Ensure consistent styling for all intelligence cards */
+        .intelligence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.2;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            border-radius: 16px;
+        }
+        
+        /* Default colors for all cards (including clones) */
+        .intelligence-card:nth-child(4n+1)::before {
+            background: linear-gradient(135deg, #B026FF, #D946EF);
+        }
+        
+        .intelligence-card:nth-child(4n+2)::before {
+            background: linear-gradient(135deg, #4169E1, #87CEEB);
+        }
+        
+        .intelligence-card:nth-child(4n+3)::before {
+            background: linear-gradient(135deg, #10B981, #39FF14);
+        }
+        
+        .intelligence-card:nth-child(4n+4)::before {
+            background: linear-gradient(135deg, #D946EF, #B026FF);
+        }
+        
+        /* Original purple card and its clone */
+        .intelligence-card:nth-child(4n+1) h3,
+        .intelligence-card.cloned-card:nth-child(4n+1) h3 {
+            color: #D946EF;
+        }
+        
+        /* Original blue card and its clone */
+        .intelligence-card:nth-child(4n+2) h3,
+        .intelligence-card.cloned-card:nth-child(4n+2) h3 {
+            color: #4169E1;
+        }
+        
+        /* Original green card and its clone */
+        .intelligence-card:nth-child(4n+3) h3,
+        .intelligence-card.cloned-card:nth-child(4n+3) h3 {
+            color: #10B981;
+        }
+        
+        /* Original purple card and its clone (different shade) */
+        .intelligence-card:nth-child(4n+4) h3,
+        .intelligence-card.cloned-card:nth-child(4n+4) h3 {
+            color: #B026FF;
+        }
+
+        @media (min-width: 768px) {
+            .intelligence-card {
+                flex: 0 0 calc(50% - 40px);
+                max-width: calc(50% - 40px);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .intelligence-card {
+                flex: 0 0 calc(50% - 40px); /* Show exactly 2 cards at a time */
+                max-width: calc(50% - 40px);
+            }
+        }
+        
+        /* Enhanced hover effects for intelligence cards */
+        .intelligence-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .intelligence-card:hover::before {
+            opacity: 0.8;
+            transform: scale(1.03);
+        }
+        
+        .intelligence-card:hover h3 {
+            color: white !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .intelligence-card:hover p, 
+        .intelligence-card:hover .count-up,
+        .intelligence-card:hover .text-gray-400 {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        .intelligence-nav {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100; /* Increased z-index to ensure clickability */
+            cursor: pointer;
+            pointer-events: auto; /* Ensure clicks go through */
+        }
+
+        @media (min-width: 768px) {
+            .intelligence-nav {
+                display: block;
+            }
+        }
+
+        .intelligence-nav-prev {
+            left: 20px;
+        }
+
+        .intelligence-nav-next {
+            right: 20px;
+        }
+
+        .intelligence-nav-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100; /* Ensure buttons are clickable */
+        }
+
+        .intelligence-nav-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .intelligence-nav-button svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        /* Mobile menu styling */
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 100; /* Higher z-index to ensure it's above everything */
+        }
+
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        #mobile-menu-button {
+            z-index: 101; /* Higher than the menu to ensure it's always clickable */
+            padding: 8px;
+            margin-right: 5px;
+            background-color: rgba(5, 5, 5, 0.8);
+            border-radius: 8px;
+        }
+
+        #mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(5, 5, 5, 0.8);
+            border-radius: 50%;
+            padding: 8px;
+            z-index: 102;
+        }
+
+        /* Hero content positioning */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Highlight animation for the top glitter */
+        @keyframes disco-highlight {
+            0% { 
+                transform: scale(0.9) translate(0px, 0px);
+                opacity: 0.7;
+                filter: blur(5px);
+            }
+            50% { 
+                transform: scale(1.1) translate(10px, -5px);
+                opacity: 1;
+                filter: blur(4px);
+            }
+            100% { 
+                transform: scale(0.95) translate(-5px, 3px);
+                opacity: 0.8;
+                filter: blur(6px);
+            }
+        }
+
+        /* Create a neon glow around the disco ball */
+        .disco-glow {
+            position: absolute;
+            top: -30px;
+            left: -65px;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 
+                0 0 40px rgba(255, 20, 147, 0.5),
+                0 0 80px rgba(138, 43, 226, 0.4),
+                0 0 120px rgba(0, 191, 255, 0.3);
+            filter: blur(10px);
+            opacity: 0.6;
+            z-index: -2;
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 20% 100%);
+            animation: disco-glow 8s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+        
+        @keyframes disco-glow {
+            0% { opacity: 0.5; filter: blur(10px); }
+            50% { opacity: 0.7; filter: blur(15px); }
+            100% { opacity: 0.6; filter: blur(12px); }
+        }
+        
+        /* Remove all previous disco ball related styles */
+        .main-disco-ball,
+        .main-disco-ball::before,
+        .main-disco-ball::after,
+        .main-disco-ball-highlight,
+        .disco-glow,
+        .disco-ball-container,
+        .disco-ball-3d,
+        .disco-facet,
+        .disco-reflection,
+        .disco-glow-3d,
+        .disco-highlight,
+        .facets-container {
+            display: none;
+        }
+        
+        /* Three.js disco ball container */
+        #disco-ball-container {
+            position: absolute;
+            top: -130px; /* High position as requested */
+            left: 50%; /* Slightly more to the right to feel more central */
+            transform: translateX(-50%); /* Center horizontally */
+            width: 250px; /* Increased size by ~25% */
+            height: 250px;
+            z-index: 0; /* Behind text but in front of backgrounds */
+            pointer-events: none; /* Don't capture mouse events */
+            overflow: hidden; /* Hide the bottom portion */
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%); /* Show 80% of the ball */
+            background: transparent; /* Ensure no background */
+        }
+        
+        /* Ensure the hero text is above the disco ball */
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Glow effect around the disco ball */
+        .disco-glow-webgl {
+            position: absolute;
+            top: -130px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.6;
+            z-index: -1;
+            background: transparent;
+            box-shadow: 
+                0 0 50px rgba(255, 20, 147, 0.5),
+                0 0 80px rgba(138, 43, 226, 0.4),
+                0 0 120px rgba(0, 191, 255, 0.3);
+            animation: disco-glow-pulse 5s infinite alternate;
+            pointer-events: none;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%); /* Match container */
+        }
+        
+        @keyframes disco-glow-pulse {
+            0% { 
+                opacity: 0.5;
+                filter: blur(20px);
+            }
+            50% {
+                opacity: 0.7;
+                filter: blur(30px);
+            }
+            100% {
+                opacity: 0.6;
+                filter: blur(25px);
+            }
+        }
+
+        /* Add text shadow to improve readability of the heading text */
+        .hero-heading {
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            color: white; /* Default color for all text */
+        }
+
+        /* Solid color for "Put AI to work for your" - use a funkier, softer pink */
+        .hero-heading .vibrant-text {
+            color: #FF8AD8 !important; /* Funkier, softer pink for better readability */
+            text-shadow: 
+                0 0 15px rgba(255, 138, 216, 0.6), /* Stronger glow for better visibility */
+                0 1px 3px rgba(0, 0, 0, 0.8); /* Darker shadow for contrast */
+            position: relative;
+            font-weight: 800; /* Ensure bold font weight */
+            /* Override any potential background that might interfere */
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: #FF8AD8 !important;
+            background-clip: initial !important;
+        }
+
+        /* Style for the "your" part to match the "Put AI to work for" part */
+        .hero-heading > span:not(.vibrant-text) {
+            color: #FF8AD8 !important; /* Same pink color as "Put AI to work for" */
+            text-shadow: 
+                0 0 15px rgba(255, 138, 216, 0.6), /* Same shadow as vibrant-text */
+                0 1px 3px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+            /* Override any potential background that might interfere */
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            -webkit-text-fill-color: #FF8AD8 !important;
+            background-clip: initial !important;
+        }
+
+        /* Solid color for the typewriter text - now green instead of pink */
+        #typewriter.gradient-text {
+            color: #00FFC8 !important; /* Soft green color */
+            text-shadow: 0 0 10px rgba(0, 255, 200, 0.3); /* Subtle glow */
+            background: none !important; /* Remove gradient */
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: #00FFC8 !important; /* Force the solid color */
+            background-clip: text !important;
+        }
+
+        /* Rounded square */
+        .floating-shape.rounded-square {
+            border-radius: 25%;
+        }
+
+        /* Circle */
+        .floating-shape.circle {
+            border-radius: 50%;
+        }
+
+        /* Add more tetris shapes - new shapes */
+        /* Tetris W shape */
+        .floating-shape.tetris-w {
+            clip-path: polygon(0 0, 33% 0, 33% 33%, 66% 33%, 66% 66%, 100% 66%, 100% 100%, 66% 100%, 66% 66%, 33% 66%, 33% 33%, 0 33%);
+            border-radius: 2px; /* Unified border-radius for authentic Tetris look */
+        }
+
+        /* Tetris P shape */
+        .floating-shape.tetris-p {
+            clip-path: polygon(0 0, 66% 0, 66% 66%, 33% 66%, 33% 100%, 0 100%);
+            border-radius: 2px; /* Unified border-radius for authentic Tetris look */
+        }
+
+        /* Tetris H shape */
+        .floating-shape.tetris-h {
+            clip-path: polygon(0 0, 33% 0, 33% 33%, 66% 33%, 66% 0, 100% 0, 100% 100%, 66% 100%, 66% 66%, 33% 66%, 33% 100%, 0 100%);
+            border-radius: 2px; /* Unified border-radius for authentic Tetris look */
+        }
+
+        /* Tetris X shape */
+        .floating-shape.tetris-x {
+            clip-path: polygon(0 0, 33% 0, 33% 33%, 66% 33%, 66% 0, 100% 0, 100% 33%, 66% 33%, 66% 66%, 100% 66%, 100% 100%, 66% 100%, 66% 66%, 33% 66%, 33% 100%, 0 100%, 0 66%, 33% 66%, 33% 33%, 0 33%);
+            border-radius: 2px; /* Unified border-radius for authentic Tetris look */
+        }
+
+        /* Make all tetris shapes have sharper edges */
+        .floating-shape.tetris-t,
+        .floating-shape.tetris-l,
+        .floating-shape.tetris-j,
+        .floating-shape.tetris-z,
+        .floating-shape.tetris-s,
+        .floating-shape.tetris-plus,
+        .floating-shape.tetris-u,
+        .floating-shape.tetris-w,
+        .floating-shape.tetris-p,
+        .floating-shape.tetris-h,
+        .floating-shape.tetris-x {
+            border-radius: 2px; /* Unified border-radius for authentic Tetris look */
+        }
+
+        /* Add a subtle pulsing animation to all shapes for more noticeable movement */
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 15px rgba(100, 100, 255, 0.15);
+                opacity: 0.7;
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(120, 120, 255, 0.35);
+                opacity: 0.9;
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(100, 100, 255, 0.15);
+                opacity: 0.7;
+            }
+        }
+
+        .floating-shape {
+            animation: pulse-glow 5s infinite ease-in-out;
+        }
+
+        /* Color-specific glow effects */
+        .floating-shape.purple {
+            box-shadow: 0 0 18px rgba(176, 38, 255, 0.25);
+        }
+        
+        .floating-shape.pink {
+            box-shadow: 0 0 18px rgba(217, 70, 239, 0.25);
+        }
+        
+        .floating-shape.blue {
+            box-shadow: 0 0 18px rgba(65, 105, 225, 0.25);
+        }
+        
+        .floating-shape.cyan {
+            box-shadow: 0 0 18px rgba(135, 206, 235, 0.25);
+        }
+        
+        .floating-shape.mint {
+            box-shadow: 0 0 18px rgba(16, 185, 129, 0.25);
+        }
+        
+        .floating-shape.amber {
+            box-shadow: 0 0 18px rgba(245, 158, 11, 0.25);
+        }
+
+        /* Ensure a smooth scrolling experience for the whole page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Add a smooth transition for all sections */
+        section {
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            will-change: opacity, transform;
+            backface-visibility: hidden;
+        }
+
+        /* Improve initial page load transition */
+        body {
+            transition: opacity 0.3s ease-in-out;
+            scroll-behavior: smooth;
+        }
+        
+        /* Enhance smooth scrolling globally */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Style for when the page is fully loaded - show animations properly */
+        .page-loaded .floating-shape {
+            animation-play-state: running;
+        }
+
+        /* Optimize for hardware acceleration throughout */
+        .floating-shape,
+        .testimonial-container,
+        .intelligence-container,
+        .hero-heading,
+        .primary-button {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        
+        /* Enhance section transitions */
+        .page-loaded section {
+            animation: sectionFadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes sectionFadeIn {
+            from {
+                opacity: 0.8;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Improve visibility of all UI elements on the page */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Optimize for hardware acceleration throughout */
+        .floating-shape,
+        .testimonial-container,
+        .intelligence-container,
+        .hero-heading,
+        .primary-button,
+        section {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        /* Ensure content is visually separated from shapes */
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Ensure animations run properly */
+        .animations-enabled .floating-shape {
+            animation-play-state: running !important;
+        }
+        
+        /* Ensure floating shapes are visible throughout the page */
+        #floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            overflow: visible;
+            pointer-events: none;
+        }
+        
+        /* Individual shapes styling to ensure they appear throughout the page */
+        .floating-shape {
+            position: fixed;
+            opacity: 0;
+            animation: fadeIn 0.3s forwards;
+            pointer-events: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.7; }
+        }
+        
+        /* Ensure shapes appear above the background but below content */
+        body {
+            background-color: #0F0F0F;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Make all sections have proper z-index to show content above shapes */
+        section {
+            position: relative;
+            z-index: 5;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Enable hardware acceleration for main content */
+        .hero-content, 
+        .intelligence-carousel,
+        .testimonial-carousel,
+        .process-steps {
+            position: relative;
+            z-index: 15;
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
+        /* Intelligence section cards */
+        .intelligence-card {
+            background-color: rgba(30, 30, 30, 0.9); /* Solid background color */
+            padding: 1.5rem;
+            border-radius: 1rem;
+            min-width: 300px;
+            width: 330px;
+            margin-right: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease-out;
+        }
+        
+        /* Add gradient backgrounds for cards */
+        .intelligence-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .intelligence-card.gradient-purple::before {
+            background: linear-gradient(135deg, #6c33ff 0%, #b265ff 100%);
+        }
+        
+        .intelligence-card.gradient-blue::before {
+            background: linear-gradient(135deg, #0088ff 0%, #33ccff 100%);
+        }
+        
+        .intelligence-card.gradient-green::before {
+            background: linear-gradient(135deg, #00cc88 0%, #33ffaa 100%);
+        }
+        
+        /* Card hover effects */
+        .intelligence-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .intelligence-card:hover::before {
+            opacity: 0.3;
+        }
+        
+        .intelligence-card:hover .card-title {
+            color: white;
+        }
+        
+        .intelligence-card:hover .count-up {
+            transform: scale(1.05);
+        }
+        
+        /* Active card state */
+        .intelligence-card.active {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .intelligence-card.active::before {
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation - exactly matching reference site -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-5">
+        <div class="container mx-auto px-6">
+            <nav class="flex items-center justify-between">
+                <a href="#" class="flex items-center">
+                    <img src="/logo.svg" alt="Swansight" class="h-8">
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-button" class="md:hidden z-50 text-white p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                
+                <!-- Mobile menu -->
+                <div id="mobile-menu" class="fixed inset-0 bg-deepBlack bg-opacity-95 backdrop-blur-lg md:hidden z-40">
+                    <div class="flex flex-col items-center justify-center h-full space-y-8 relative">
+                        <button id="mobile-menu-close" class="absolute top-5 right-5 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <a href="#use-cases" class="nav-link text-gray-300 hover:text-white text-xl">Use Cases</a>
+                        <a href="#process" class="nav-link text-gray-300 hover:text-white text-xl">Process</a>
+                        <a href="#testimonials" class="nav-link text-gray-300 hover:text-white text-xl">Testimonials</a>
+                        <button class="primary-button mt-4">Schedule Call</button>
+                    </div>
+                </div>
+                
+                <!-- Desktop menu -->
+                <div class="hidden md:flex items-center space-x-10">
+                    <a href="#use-cases" class="nav-link text-gray-300 hover:text-white">Use Cases</a>
+                    <a href="#process" class="nav-link text-gray-300 hover:text-white">Process</a>
+                    <a href="#testimonials" class="nav-link text-gray-300 hover:text-white">Testimonials</a>
+                </div>
+                
+                <button class="hidden md:block primary-button">
+                    Schedule Call
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with enhanced translucent shapes and centered content -->
+    <section class="relative min-h-screen flex items-center justify-center pt-32 pb-20">
+        <!-- Floating background elements - enhanced visibility -->
+        <div id="floating-shapes" class="absolute inset-0 overflow-hidden z-0"></div>
+        <div id="disco-balls" class="absolute inset-0 overflow-hidden z-0"></div>
+        
+        <div class="container mx-auto px-6 z-10 text-center relative">
+            <div class="hero-content relative z-10">
+                <!-- WebGL disco ball container positioned above "work" -->
+                <div class="disco-glow-webgl"></div>
+                <div id="disco-ball-container"></div>
+                
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 mx-auto hero-heading">
+                    <span class="vibrant-text">Put AI to work for</span> <span>your</span>
+                    <div class="mt-2">
+                        <span id="typewriter" class="gradient-text"></span>
+                        <span class="typewriter-cursor"></span>
+                    </div>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mb-10 mt-6 mx-auto">
+                Ditch the dumb, pricy, siloed SaaS tools. <br>
+                Bring AI + data + workflows to every corner of your customer journey with Swancity, the Agent OS for customer collaboration. 
+            </p>
+            
+            <button class="primary-button mt-4">
+                Schedule Your Strategy Session
+            </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof with consistent spacing -->
+    <section class="py-16 bg-opacity-95 border-t border-white border-opacity-5">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-gray-400 text-lg mb-12">
+                Trusted by organizations from 2 to 20,000 employees
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 items-center">
+                <!-- Company logos in grayscale with hover effect to show color -->
+                <img src="/logos/amazon.svg" alt="Amazon" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+                <img src="/logos/shopify.svg" alt="Shopify" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+                <img src="/logos/microsoft.svg" alt="Microsoft" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+                <img src="/logos/adobe.svg" alt="Adobe" class="h-8 md:h-10 opacity-70 hover:opacity-100 transition-opacity" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases with cards matching reference site -->
+    <section id="use-cases" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                Intelligence That <span class="gradient-text">Scales With You</span>
+            </h2>
+            
+            <div class="intelligence-carousel">
+                <div class="intelligence-container">
+                    <!-- Card 1 -->
+                    <div class="intelligence-card feature-card">
+                        <h3 class="text-neonPurple text-2xl font-semibold mb-4">
+                        Real-time Conversation Intelligence
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Whisper winning moves to your team during critical customer interactions
+                    </p>
+                        <div class="flex flex-col space-y-4">
+                        <div class="flex items-center">
+                                <span class="text-neonPurple text-3xl font-bold count-up" data-target="22">0</span>
+                            <span class="text-gray-400 ml-2">% higher conversion rates</span>
+                        </div>
+                        <div class="flex items-center">
+                                <span class="text-neonPurple text-3xl font-bold count-up" data-target="35">0</span>
+                            <span class="text-gray-400 ml-2">% faster rep onboarding</span>
+                        </div>
+                    </div>
+                </div>
+                
+                    <!-- Card 2 -->
+                    <div class="intelligence-card feature-card">
+                        <h3 class="text-comicBlue text-2xl font-semibold mb-4">
+                        AI-Powered Knowledge Management
+                    </h3>
+                    <p class="text-gray-400 mb-6">
+                        Transform scattered information into actionable knowledge that learns from every interaction
+                    </p>
+                        <div class="flex flex-col space-y-4">
+                        <div class="flex items-center">
+                                <span class="text-comicBlue text-3xl font-bold count-up" data-target="68">0</span>
+                            <span class="text-gray-400 ml-2">% reduced time-to-answer</span>
+                        </div>
+                        <div class="flex items-center">
+                                <span class="text-comicBlue text-3xl font-bold count-up" data-target="41">0</span>
+                            <span class="text-gray-400 ml-2">% higher satisfaction scores</span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="intelligence-card feature-card">
+                        <h3 class="text-brightGreen text-2xl font-semibold mb-4">
+                            Advanced Analytics
+                        </h3>
+                        <p class="text-gray-400 mb-6">
+                            Leverage powerful analytics to gain deep insights into customer behavior and optimize your business strategies
+                        </p>
+                        <div class="flex flex-col space-y-4">
+                            <div class="flex items-center">
+                                <span class="text-brightGreen text-3xl font-bold count-up" data-target="53">0</span>
+                                <span class="text-gray-400 ml-2">% better decision making</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-brightGreen text-3xl font-bold count-up" data-target="47">0</span>
+                                <span class="text-gray-400 ml-2">% increased ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="intelligence-card feature-card">
+                        <h3 class="text-softBlue text-2xl font-semibold mb-4">
+                            Smart Automation
+                        </h3>
+                        <p class="text-gray-400 mb-6">
+                            Automate repetitive tasks and workflows to improve efficiency and focus on what matters most
+                        </p>
+                        <div class="flex flex-col space-y-4">
+                            <div class="flex items-center">
+                                <span class="text-softBlue text-3xl font-bold count-up" data-target="78">0</span>
+                                <span class="text-gray-400 ml-2">% time saved on routine tasks</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-softBlue text-3xl font-bold count-up" data-target="62">0</span>
+                                <span class="text-gray-400 ml-2">% reduction in human error</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="intelligence-nav intelligence-nav-prev">
+                    <button class="intelligence-nav-button">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="intelligence-nav intelligence-nav-next">
+                    <button class="intelligence-nav-button">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="primary-button">Get Started Today</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section with alternating sides -->
+    <section id="process" class="py-28 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-20">
+                The Path to <span class="gradient-text">Transformation</span>
+            </h2>
+            
+            <!-- Create a vertical path with numbered steps - alternating sides -->
+            <div class="process-timeline max-w-5xl mx-auto">
+                <!-- Steps with alternating sides -->
+                <!-- Step 1 - Left side -->
+                <div class="process-step process-step-left fade-in-step" data-step="1">
+                    <div class="process-number bg-accent text-white">1</div>
+                    <div class="feature-card">
+                        <h3 class="text-violet-400 text-2xl font-semibold mb-2">Discovery</h3>
+                        <p class="text-gray-400">Streamlined workflow audit through one call or async discussion</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 - Right side -->
+                <div class="process-step process-step-right fade-in-step" data-step="2">
+                    <div class="process-number bg-accent text-white">2</div>
+                    <div class="feature-card">
+                        <h3 class="text-blue-400 text-2xl font-semibold mb-2">Integration</h3>
+                        <p class="text-gray-400">Data and workflow connection with your existing systems</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 - Left side -->
+                <div class="process-step process-step-left fade-in-step" data-step="3">
+                    <div class="process-number bg-accent text-white">3</div>
+                    <div class="feature-card">
+                        <h3 class="text-green-400 text-2xl font-semibold mb-2">Training</h3>
+                        <p class="text-gray-400">Swansight learns from your top performers' best practices</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 - Right side -->
+                <div class="process-step process-step-right fade-in-step" data-step="4">
+                    <div class="process-number bg-accent text-white">4</div>
+                    <div class="feature-card">
+                        <h3 class="text-violet-400 text-2xl font-semibold mb-2">Scale</h3>
+                        <p class="text-gray-400">Watch as your entire team performs at the level of your stars</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-20">
+                <button class="primary-button">
+                    Schedule Your Strategy Session
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">
+                What Our <span class="gradient-text">Partners Say</span>
+            </h2>
+            
+            <div class="testimonial-carousel relative max-w-3xl mx-auto">
+                <div class="testimonial-container">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-card">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-neonPurple">
+                                    <img src="/testimonials/person1.jpg" alt="Jane Smith" class="w-full h-full object-cover" />
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold text-lg">Jane Smith</p>
+                                    <p class="text-gray-400 text-sm">Customer Success Director, Amazon</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-lg italic">
+                                "Swansight has transformed how our support teams interact with customers. The real-time intelligence gives us an edge we never had before."
+                            </p>
+                        </div>
+                    </div>
+                
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-comicBlue">
+                                    <img src="/testimonials/person2.jpg" alt="Robert Johnson" class="w-full h-full object-cover" />
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold text-lg">Robert Johnson</p>
+                                    <p class="text-gray-400 text-sm">VP of Sales, Microsoft</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-lg italic">
+                                "The ability to capture our best performers' approaches and scale them across the team has been revolutionary for our sales organization."
+                            </p>
+                        </div>
+                    </div>
+                
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brightGreen">
+                                    <img src="/testimonials/person3.jpg" alt="Emma Chen" class="w-full h-full object-cover" />
+                                </div>
+                                <div>
+                                    <p class="text-white font-semibold text-lg">Emma Chen</p>
+                                    <p class="text-gray-400 text-sm">CTO, Shopify</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-lg italic">
+                                "Implementation was smoother than expected, and the ROI was visible within weeks. Our team's productivity has increased dramatically."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation buttons -->
+                <div class="testimonial-nav testimonial-nav-prev">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </div>
+                
+                <div class="testimonial-nav testimonial-nav-next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white border-opacity-5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <img src="/logo.svg" alt="Swansight" class="h-10 mb-6">
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Swansight transforms customer-facing knowledge work through intelligent AI agents that learn from your team's best practices.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:hello@swansight.com" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/swansight" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="#use-cases" class="text-gray-400 hover:text-white transition-colors">Use Cases</a></li>
+                            <li><a href="#process" class="text-gray-400 hover:text-white transition-colors">Process</a></li>
+                            <li><a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Testimonials</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">Contact</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Schedule Call</a></li>
+                            <li><a href="mailto:hello@swansight.com" class="text-gray-400 hover:text-white transition-colors">Email Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-white border-opacity-10 text-center text-gray-400 text-sm">
+                <p>© 2025 Swansight. All rights reserved.</p>
+                <p class="mt-2">Crafted with ♥ and ☕</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Create a true 3D disco ball with Three.js
+        function createWebGLDiscoBall() {
+            const container = document.getElementById('disco-ball-container');
+            if (!container) return;
+            
+            // Scene setup
+            const scene = new THREE.Scene();
+            
+            // Camera setup
+            const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 250;
+            
+            // Renderer setup
+            const renderer = new THREE.WebGLRenderer({ 
+                alpha: true, 
+                antialias: true,
+                premultipliedAlpha: false // Ensures proper transparency
+            });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setClearColor(0x000000, 0); // Completely transparent background
+            container.appendChild(renderer.domElement);
+            
+            // Create a clear scene with transparent background
+            scene.background = null;
+            
+            // Lights setup
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+            scene.add(ambientLight);
+            
+            // Add multiple point lights for disco effect
+            const lights = [];
+            
+            // Main spotlight from top-right (stronger)
+            const spotLight = new THREE.SpotLight(0xffffff, 1.8);
+            spotLight.position.set(150, 200, 100);
+            spotLight.angle = Math.PI / 6;
+            spotLight.penumbra = 0.2;
+            spotLight.decay = 1;
+            spotLight.distance = 500;
+            scene.add(spotLight);
+            
+            // Colored lights for disco effect - more concentrated on top
+            const colors = [0xff1493, 0x8a2be2, 0x00bfff, 0xff4500, 0x7fffd4, 0xffd700];
+            
+            for (let i = 0; i < 8; i++) {
+                // More lights with higher intensity
+                const light = new THREE.PointLight(colors[i % colors.length], 0.7, 300);
+                
+                // Position more lights on the top half
+                const angle = (i / 8) * Math.PI * 2;
+                const distance = 150 + Math.random() * 50;
+                const height = 100 + Math.random() * 100; // Mostly above the center
+                
+                light.position.set(
+                    Math.sin(angle) * distance,
+                    height * (Math.random() > 0.3 ? 1 : -0.5), // 70% chance to be on top half
+                    Math.cos(angle) * distance
+                );
+                
+                scene.add(light);
+                lights.push(light);
+                
+                // Animate each light with faster movement
+                gsap.to(light.position, {
+                    x: Math.sin(angle + Math.PI) * distance,
+                    y: light.position.y * (Math.random() > 0.5 ? 1 : -1),
+                    z: Math.cos(angle + Math.PI) * distance,
+                    duration: 5 + Math.random() * 8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+                
+                // Animate light intensity for more dynamic flashing
+                gsap.to(light, {
+                    intensity: 0.2 + Math.random() * 0.8,
+                    duration: 0.5 + Math.random() * 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut"
+                });
+            }
+            
+            // Create disco ball with mirrored facets
+            const discoBall = new THREE.Group();
+            
+            // Create a shiny, reflective material for the mirror facets
+            const mirrorMaterial = new THREE.MeshPhongMaterial({
+                color: 0xffffff,
+                specular: 0xffffff,
+                shininess: 150, // More shiny
+                flatShading: true,
+                transparent: true,
+                opacity: 0.85 // Slightly translucent
+            });
+            
+            // Function to create a single disco ball facet - more square-shaped now
+            function createFacet(position, normal, width, height) {
+                // Create facet geometry - rectangular for authentic disco ball look
+                const facetGeo = new THREE.PlaneGeometry(width, height);
+                
+                // Make material more mirror-like
+                const facetMat = mirrorMaterial.clone();
+                
+                // Add more varied brightness based on position
+                const distFromTop = Math.abs(position.y - 70) / 140; // 0 at top, 1 at bottom
+                
+                // Make facets on top half brighter
+                if (position.y > 0) {
+                    facetMat.emissive = new THREE.Color(0xffffff);
+                    facetMat.emissiveIntensity = 0.15 * (1 - distFromTop);
+                }
+                
+                // Add a very slight random tint to some facets for realism
+                if (Math.random() > 0.6) {
+                    const randomColor = new THREE.Color(colors[Math.floor(Math.random() * colors.length)]);
+                    randomColor.lerp(new THREE.Color(0xffffff), 0.85);
+                    facetMat.color = randomColor;
+                }
+                
+                const facet = new THREE.Mesh(facetGeo, facetMat);
+                
+                // Position at the given position
+                facet.position.copy(position);
+                
+                // Orient to face outward from center
+                facet.lookAt(position.clone().add(normal));
+                
+                // Add some randomness to the orientation for realism
+                facet.rotation.z += (Math.random() - 0.5) * 0.1;
+                
+                return facet;
+            }
+            
+            // Create a basic sphere to generate our facet positions
+            const radius = 90; // Increased radius by ~25%
+            const segments = 24; // More segments for better detail with larger ball
+            
+            // Manually create facets in a spherical pattern - more concentrated at top
+            for (let lat = 0; lat < segments; lat++) {
+                const theta1 = (lat / segments) * Math.PI;
+                const theta2 = ((lat + 1) / segments) * Math.PI;
+                
+                // Calculate density - more facets at the top, fewer at bottom
+                const density = lat < segments / 2 ? 
+                    segments * 2 : // Full density for top half
+                    Math.max(8, Math.floor((segments * 2) * (1 - (lat / segments)))); // Decreasing density for bottom but keep more facets
+                
+                for (let lon = 0; lon < density; lon++) {
+                    const phi1 = (lon / density) * Math.PI * 2;
+                    const phi2 = ((lon + 1) / density) * Math.PI * 2;
+                    
+                    // Calculate the center position of this facet
+                    const x = radius * Math.sin(theta1 + (theta2 - theta1) / 2) * Math.cos(phi1 + (phi2 - phi1) / 2);
+                    const y = radius * Math.cos(theta1 + (theta2 - theta1) / 2);
+                    const z = radius * Math.sin(theta1 + (theta2 - theta1) / 2) * Math.sin(phi1 + (phi2 - phi1) / 2);
+                    
+                    const position = new THREE.Vector3(x, y, z);
+                    const normal = position.clone().normalize();
+                    
+                    // Vary facet size based on position
+                    const latitudeFactor = Math.sin(theta1 + (theta2 - theta1) / 2);
+                    
+                    // Make facets on top half slightly larger for visibility
+                    const topMultiplier = position.y > 0 ? 1.2 : 1.0;
+                    
+                    // Make facets more rectangular (like real disco balls)
+                    const width = (7 + 6 * latitudeFactor) * topMultiplier;
+                    const height = (7 + 6 * latitudeFactor) * topMultiplier * (Math.random() * 0.3 + 0.85);
+                    
+                    // Create and add the facet
+                    const facet = createFacet(position, normal, width, height);
+                    discoBall.add(facet);
+                }
+            }
+            
+            // Add floating glitter/reflection points concentrated on top half
+            for (let i = 0; i < 60; i++) { // More glitter points for larger ball
+                const glitterGeo = new THREE.CircleGeometry(1.2 + Math.random() * 2.5, 6);
+                const glitterMat = new THREE.MeshBasicMaterial({
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.6 + Math.random() * 0.4,
+                    side: THREE.DoubleSide // Visible from both sides
+                });
+                
+                const glitter = new THREE.Mesh(glitterGeo, glitterMat);
+                
+                // Position mostly on the top half and visible portion
+                const theta = Math.random() * Math.PI * (Math.random() > 0.7 ? 1 : 0.5); // 70% on top half
+                const phi = Math.random() * Math.PI * 2;
+                
+                const glitterRadius = radius + 1; // Slightly outside the ball
+                glitter.position.set(
+                    glitterRadius * Math.sin(theta) * Math.cos(phi),
+                    glitterRadius * Math.cos(theta),
+                    glitterRadius * Math.sin(theta) * Math.sin(phi)
+                );
+                
+                // Make glitter face the camera
+                glitter.lookAt(camera.position);
+                
+                // Animate glitter opacity for twinkling effect
+                gsap.to(glitterMat, {
+                    opacity: 0.1 + Math.random() * 0.2,
+                    duration: 0.2 + Math.random() * 0.8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: Math.random() * 2
+                });
+                
+                discoBall.add(glitter);
+            }
+            
+            // Earth-like tilt
+            discoBall.rotation.x = Math.PI * 0.13; // ~23 degrees, like Earth
+            
+            scene.add(discoBall);
+            
+            // Animation loop
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                // Rotate the disco ball (slightly slower)
+                discoBall.rotation.y += 0.002;
+                
+                // Make sure glitter always faces camera
+                discoBall.children.forEach(child => {
+                    if (child.geometry && child.geometry.type === 'CircleGeometry') {
+                        child.lookAt(camera.position);
+                    }
+                });
+                
+                // Render the scene
+                renderer.render(scene, camera);
+            }
+            
+            animate();
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+            
+            return { scene, discoBall, renderer, camera };
+        }
+        
+        // Create floating shapes and disco balls dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize the WebGL disco ball
+            createWebGLDiscoBall();
+            
+            const shapesContainer = document.getElementById('floating-shapes');
+            const discoBallsContainer = document.getElementById('disco-balls');
+            
+            // Create tetris-inspired floating shapes
+            const shapeCount = 14; // Reduced number for better performance and visual clarity
+
+            // Define the geometric shape types - focused on rounded shapes only
+            const shapeTypes = [
+                'rounded-square', 'circle', 'hexagon',
+                'plus', 'rhombus', 'pentagon'
+            ];
+
+            // Define specific shape distributions to ensure variety
+            const shapeDistribution = [
+                { type: 'rounded-square', weight: 25 },
+                { type: 'circle', weight: 25 },
+                { type: 'hexagon', weight: 20 },
+                { type: 'plus', weight: 10 },
+                { type: 'rhombus', weight: 10 },
+                { type: 'pentagon', weight: 10 }
+            ];
+            
+            // Soft neon colors
+            const colorClasses = ['mint', 'cyan', 'purple', 'pink', 'blue', 'amber'];
+            
+            // Size classes with distribution weights - skewed toward medium and large
+            const sizeDistribution = [
+                { class: 'tiny', weight: 15 },
+                { class: 'small', weight: 35 },
+                { class: 'medium', weight: 35 },
+                { class: 'large', weight: 15 }
+            ];
+            
+            // Function to get a random item based on weights
+            function getWeightedRandom(items, weights) {
+                let i;
+                let sum = 0;
+                const random = Math.random() * weights.reduce((a, b) => a + b, 0);
+                
+                for (i = 0; i < weights.length; i++) {
+                    sum += weights[i];
+                    if (random < sum) return items[i];
+                }
+                
+                return items[items.length - 1];
+            }
+            
+            // Pre-generate positions to ensure good spacing
+            const gridPositions = [];
+            
+            // Create a 6x6 grid for position reference (more cells, better distribution)
+            for (let row = 0; row < 6; row++) {
+                for (let col = 0; col < 6; col++) {
+                    // Create a grid cell
+                    gridPositions.push({
+                        x: col * 16 + Math.random() * 4, // 0-96% with some randomness
+                        y: row * 16 + Math.random() * 4  // 0-96% with some randomness
+                    });
+                }
+            }
+            
+            // Shuffle array randomly
+            gridPositions.sort(() => Math.random() - 0.5);
+            
+            // Create a function to generate shapes with improved animations
+            function createShape(index) {
+                const shape = document.createElement('div');
+                shape.classList.add('floating-shape');
+                
+                // Choose shape type based on weighted distribution
+                const shapeItems = shapeDistribution.map(item => item.type);
+                const shapeWeights = shapeDistribution.map(item => item.weight);
+                const shapeType = getWeightedRandom(shapeItems, shapeWeights);
+                shape.classList.add(shapeType);
+                
+                // Add random color class
+                const colorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+                shape.classList.add(colorClass);
+                
+                // Add size class based on weighted distribution
+                const sizeItems = sizeDistribution.map(item => item.class);
+                const sizeWeights = sizeDistribution.map(item => item.weight);
+                const sizeClass = getWeightedRandom(sizeItems, sizeWeights);
+                shape.classList.add(sizeClass);
+                
+                // Get the entire document height to distribute shapes across all sections
+                const totalDocHeight = document.documentElement.scrollHeight;
+                const viewportHeight = window.innerHeight;
+                const viewportWidth = window.innerWidth;
+                
+                // Number of sections we want to cover - whole page divided by sections
+                const numSections = Math.ceil(totalDocHeight / viewportHeight);
+                
+                // Assign each shape to a specific section of the page
+                // This ensures shapes are evenly distributed throughout the page
+                const sectionIndex = index % numSections;
+                
+                // Calculate the vertical range for this shape based on its section
+                const sectionStartY = sectionIndex * viewportHeight;
+                const sectionEndY = Math.min(sectionStartY + viewportHeight, totalDocHeight);
+                const shapeYRange = {
+                    min: sectionStartY,
+                    max: sectionEndY - 100 // Subtract shape height to keep it visible
+                };
+                
+                // Horizontal positioning - divide width into 4 quadrants
+                // Each shape gets placed in a specific horizontal quadrant to ensure spread
+                const quadrantIndex = Math.floor(Math.random() * 4);
+                const quadrantWidth = viewportWidth / 4;
+                const shapeXRange = {
+                    min: quadrantIndex * quadrantWidth,
+                    max: (quadrantIndex + 1) * quadrantWidth - 100 // Subtract shape width
+                };
+                
+                // Randomly position within the assigned ranges
+                // Using absolute pixel values instead of percentages for more accurate distribution
+                const xPos = shapeXRange.min + Math.random() * (shapeXRange.max - shapeXRange.min);
+                const yPos = shapeYRange.min + Math.random() * (shapeYRange.max - shapeYRange.min);
+                
+                // Set initial position in pixels
+                shape.style.left = `${xPos}px`;
+                shape.style.top = `${yPos}px`;
+                
+                // Set initial opacity to 0 and fade in
+                shape.style.opacity = '0';
+                setTimeout(() => {
+                    shape.style.opacity = '1';
+                }, 100 * index);
+                
+                // Set explicit z-index for proper layering
+                shape.style.zIndex = Math.floor(Math.random() * 3);
+                
+                // Add to container immediately
+                shapesContainer.appendChild(shape);
+                
+                // Movement properties - slower and more subtle movement
+                const state = {
+                    x: xPos,
+                    y: yPos,
+                    baseX: xPos,
+                    baseY: yPos,
+                    vx: (Math.random() - 0.5) * 0.8, // Much slower horizontal movement
+                    vy: (Math.random() - 0.5) * 0.8, // Much slower vertical movement
+                    rotation: Math.random() * 360,
+                    rotationSpeed: (Math.random() - 0.5) * 0.2, // Slower rotation
+                    amplitude: 20 + Math.random() * 40, // Range of movement from base position
+                    period: 5 + Math.random() * 10 // Period of oscillation
+                };
+                
+                // Animation that creates gentle floating with slight oscillation
+                function animateFloating() {
+                    // Current time for oscillation calculation
+                    const now = Date.now() / 1000;
+                    
+                    // Calculate new position with gentle oscillation around base position
+                    const newX = state.baseX + Math.sin(now / state.period) * state.amplitude;
+                    const newY = state.baseY + Math.cos(now / (state.period + 2)) * state.amplitude;
+                    
+                    // Update rotation
+                    state.rotation += state.rotationSpeed;
+                    
+                    // Apply new positions with GSAP for smooth animation
+                    gsap.to(shape, {
+                        x: newX - state.baseX,
+                        y: newY - state.baseY,
+                        rotation: state.rotation,
+                        duration: 2,
+                        ease: "power1.inOut"
+                    });
+                    
+                    // Continue animation with RAF for smoother performance
+                    requestAnimationFrame(animateFloating);
+                }
+                
+                // Start animation
+                animateFloating();
+                
+                return shape;
+            }
+            
+            // Generate all shapes right away
+                for (let i = 0; i < shapeCount; i++) {
+                        createShape(i);
+            }
+            
+            // Mark page as loaded to ensure animations run smoothly
+            document.body.classList.add('page-loaded');
+            
+            // Improve scroll performance
+            window.addEventListener('scroll', function() {
+                // Apply will-change to shapes during scroll for better performance
+                if (!document.body.classList.contains('is-scrolling')) {
+                    document.body.classList.add('is-scrolling');
+                    // Only apply will-change during scroll
+                    document.querySelectorAll('.floating-shape').forEach(shape => {
+                        shape.style.willChange = 'transform';
+                    });
+                }
+                    
+                // Reset optimizations after scroll stops
+                    clearTimeout(window.scrollEndTimer);
+                    window.scrollEndTimer = setTimeout(() => {
+                    document.body.classList.remove('is-scrolling');
+                    // Reset will-change to auto when not scrolling
+                        document.querySelectorAll('.floating-shape').forEach(shape => {
+                            shape.style.willChange = 'auto';
+                        });
+                    
+                    // Ensure the intelligence carousel continues to function after scroll
+                    if (window.intelligenceContainer) {
+                        window.intelligenceContainer.style.willChange = 'transform';
+                }
+                }, 200);
+            }, { passive: true });
+            
+            // Optimize for better performance
+            setTimeout(() => {
+                // Mark page as fully loaded
+                document.body.classList.add('fully-loaded');
+            }, 500);
+        });
+        
+        // Implement character-by-character typewriter effect
+        const typewriterElement = document.getElementById('typewriter');
+        const words = ["People", "Customers", "Employees"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100; // ms per character
+
+        function typeEffect() {
+            if (!typewriterElement) return;
+            
+            const currentWord = words[wordIndex];
+            const currentText = currentWord.substring(0, charIndex);
+            
+            typewriterElement.textContent = currentText;
+            
+            // Add blinking cursor effect
+            const cursor = document.querySelector('.typewriter-cursor');
+            if (cursor) {
+                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+            }
+            
+            // Typing logic
+            if (!isDeleting) {
+                // Typing forward
+                if (charIndex < currentWord.length) {
+                    charIndex++;
+                    setTimeout(typeEffect, typingSpeed);
+                } else {
+                    // Pause at end of word
+                isDeleting = true;
+                    setTimeout(typeEffect, 1500);
+                }
+            } else {
+                // Deleting
+                if (charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeEffect, typingSpeed / 2);
+                } else {
+                    // Move to next word
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(typeEffect, 500);
+            }
+            }
+        }
+
+        // Start the typewriter effect
+        document.addEventListener('DOMContentLoaded', typeEffect);
+        
+        // Count up animation - restore functionality but make immediate
+        const countUpElements = document.querySelectorAll('.count-up');
+        
+        const animateCountUp = (element) => {
+            if (!element) return;
+            const target = parseInt(element.dataset.target || 0);
+            element.innerText = target; // Show target value immediately
+        };
+        
+        // Initialize for count-up
+        document.addEventListener('DOMContentLoaded', function() {
+        countUpElements.forEach(element => {
+                animateCountUp(element);
+            });
+        });
+
+            // Intelligence carousel functionality with infinite scroll
+            const intelligenceContainer = document.querySelector('.intelligence-container');
+            const intelligenceCards = document.querySelectorAll('.intelligence-card');
+            const prevButton = document.querySelector('.intelligence-nav-prev');
+            const nextButton = document.querySelector('.intelligence-nav-next');
+            let currentIntelligenceSlide = 0;
+        let autoScrollTimeout;
+            let cardWidth = 0;
+        
+        // Store in window to access globally for performance optimizations
+        window.intelligenceContainer = intelligenceContainer;
+
+            function updateIntelligenceCarouselDimensions() {
+                if (!intelligenceContainer || !intelligenceCards.length) return;
+                
+                // Get the full width of a card including margins
+                cardWidth = intelligenceCards[0].offsetWidth + parseInt(getComputedStyle(intelligenceCards[0]).marginRight);
+            }
+
+            function updateIntelligenceScroll(index) {
+                if (!intelligenceContainer || !intelligenceCards.length) return;
+            
+            // Force GPU acceleration for smoother transitions
+            intelligenceContainer.style.transform = 'translateZ(0)';
+                
+                updateIntelligenceCarouselDimensions();
+                
+                // Create truly seamless infinite scroll
+                const totalRealCards = intelligenceCards.length;
+                
+            // Limit index to valid range
+            if (index < 0) index = totalRealCards - 1;
+            if (index >= totalRealCards) index = 0;
+            
+            // Update current slide
+                    currentIntelligenceSlide = index;
+            
+            // Apply smooth transition
+            intelligenceContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            intelligenceContainer.style.transform = `translateX(-${cardWidth * (index + 1)}px)`;
+                    
+                    // Update active states
+                    intelligenceCards.forEach((card, i) => {
+                        card.classList.toggle('active', i === index);
+                    });
+            }
+
+            function nextIntelligenceSlide() {
+                updateIntelligenceScroll(currentIntelligenceSlide + 1);
+            }
+
+            function prevIntelligenceSlide() {
+                updateIntelligenceScroll(currentIntelligenceSlide - 1);
+            }
+
+        // Initialize intelligence carousel - ensuring proper DOM interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make sure all count-up elements show their target values
+            document.querySelectorAll('.count-up').forEach(element => {
+                const target = parseInt(element.dataset.target || 0);
+                element.innerText = target;
+            });
+            
+            // Reset any existing animation state
+            if (window.gsap) {
+                window.gsap.killAll();
+            }
+            
+            // Intelligence carousel setup
+            const intelligenceCarousel = document.querySelector('.intelligence-carousel');
+            const intelligenceContainer = document.querySelector('.intelligence-container');
+            const intelligenceCards = document.querySelectorAll('.intelligence-card');
+            
+            if (intelligenceContainer && intelligenceCards.length > 0) {
+                // Ensure any existing clones are removed
+                document.querySelectorAll('.cloned-card').forEach(card => card.remove());
+                
+                // Get real carousel cards after removing clones
+                const realCards = document.querySelectorAll('.intelligence-card:not(.cloned-card)');
+                
+                // Create clones for infinite scrolling - create multiple clones on each side for smooth infinite feel
+                const totalRealCards = realCards.length;
+                
+                // Add clones to the beginning - clone all cards 
+                for (let i = 0; i < totalRealCards; i++) {
+                    const clone = realCards[i].cloneNode(true);
+                    clone.classList.add('cloned-card', 'cloned-before');
+                    intelligenceContainer.insertBefore(clone, realCards[0]);
+                    
+                    // Fix count-up values in clone
+                    clone.querySelectorAll('.count-up').forEach(element => {
+                        const target = parseInt(element.dataset.target || 0);
+                        element.innerText = target;
+                    });
+                }
+                
+                // Add clones to the end - clone all cards
+                for (let i = 0; i < totalRealCards; i++) {
+                    const clone = realCards[i].cloneNode(true);
+                    clone.classList.add('cloned-card', 'cloned-after');
+                    intelligenceContainer.appendChild(clone);
+                    
+                    // Fix count-up values in clone
+                    clone.querySelectorAll('.count-up').forEach(element => {
+                        const target = parseInt(element.dataset.target || 0);
+                        element.innerText = target;
+                    });
+                }
+                
+                // Set up carousel state
+                let currentIndex = 0;
+                let isAnimating = false;
+                
+                // Calculate dimensions
+                let cardWidth = realCards[0].offsetWidth;
+                let marginRight = parseInt(window.getComputedStyle(realCards[0]).marginRight) || 0;
+                let totalCardWidth = cardWidth + marginRight;
+                
+                // Set initial position to show first real card
+                intelligenceContainer.style.transition = 'none';
+                intelligenceContainer.style.transform = `translateX(-${totalCardWidth * totalRealCards}px)`;
+                intelligenceContainer.offsetHeight; // Force reflow
+                intelligenceContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                
+                // Setup buttons with new handlers
+                const prevButton = document.querySelector('.intelligence-nav-prev');
+                const nextButton = document.querySelector('.intelligence-nav-next');
+                
+                if (prevButton) {
+                    // Clear previous event listeners
+                    const newPrev = prevButton.cloneNode(true);
+                    prevButton.parentNode.replaceChild(newPrev, prevButton);
+                    
+                    newPrev.addEventListener('click', () => {
+                        moveCarousel('prev');
+                    });
+                }
+                
+                if (nextButton) {
+                    // Clear previous event listeners
+                    const newNext = nextButton.cloneNode(true);
+                    nextButton.parentNode.replaceChild(newNext, nextButton);
+                    
+                    newNext.addEventListener('click', () => {
+                        moveCarousel('next');
+                    });
+                }
+                
+                // Function to update carousel position
+                function moveCarousel(direction) {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    
+                    if (direction === 'prev') {
+                        currentIndex = (currentIndex - 1 + totalRealCards) % totalRealCards;
+                    } else {
+                        currentIndex = (currentIndex + 1) % totalRealCards;
+                    }
+                    
+                    // Update all cards activation state
+                    const allCards = document.querySelectorAll('.intelligence-card');
+                    allCards.forEach((card, idx) => {
+                        const position = idx % totalRealCards;
+                        card.classList.toggle('active', position === currentIndex);
+                    });
+                    
+                    // Calculate new position - account for the cloned cards at the beginning
+                    const newPosition = (totalRealCards + currentIndex) * totalCardWidth;
+                    
+                    // Animate to new position
+                    intelligenceContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                    intelligenceContainer.style.transform = `translateX(-${newPosition}px)`;
+                    
+                    // Reset animation state after transition
+                    setTimeout(() => {
+                        isAnimating = false;
+                    }, 600);
+                }
+                
+                // Auto scroll functionality
+                let autoScrollTimer;
+                
+                function startAutoScroll() {
+                    clearTimeout(autoScrollTimer);
+                    autoScrollTimer = setTimeout(() => {
+                        if (!document.hidden) {
+                            moveCarousel('next');
+                        }
+                        startAutoScroll();
+                    }, 5000);
+                }
+                
+                // Start auto scroll
+                startAutoScroll();
+                
+                // Handle pause on hover
+                intelligenceCarousel.addEventListener('mouseenter', () => {
+                    clearTimeout(autoScrollTimer);
+                });
+                
+                intelligenceCarousel.addEventListener('mouseleave', () => {
+                    startAutoScroll();
+                });
+                
+                // Handle resize
+                window.addEventListener('resize', () => {
+                    cardWidth = realCards[0].offsetWidth;
+                    marginRight = parseInt(window.getComputedStyle(realCards[0]).marginRight) || 0;
+                    totalCardWidth = cardWidth + marginRight;
+                    
+                    // Update position without animation
+                    intelligenceContainer.style.transition = 'none';
+                    const newPosition = (totalRealCards + currentIndex) * totalCardWidth;
+                    intelligenceContainer.style.transform = `translateX(-${newPosition}px)`;
+                    intelligenceContainer.offsetHeight; // Force reflow
+                    intelligenceContainer.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+                });
+                
+                // Update card styles for better visuals
+                document.querySelectorAll('.intelligence-card').forEach((card, index) => {
+                    // Apply gradient background colors based on position
+                    const cardPosition = index % totalRealCards;
+                    let gradientClass = '';
+                    
+                    switch(cardPosition) {
+                        case 0:
+                            gradientClass = 'gradient-purple';
+                            break;
+                        case 1:
+                            gradientClass = 'gradient-blue';
+                            break;
+                        case 2:
+                            gradientClass = 'gradient-green';
+                            break;
+                        default:
+                            gradientClass = 'gradient-purple';
+                    }
+                    
+                    card.classList.add(gradientClass);
+                    
+                    // Set initial active state
+                    card.classList.toggle('active', index % totalRealCards === currentIndex);
+                });
+            }
+        });
+
+        // Main initialization function to ensure everything runs in the right order
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize metrics immediately
+            document.querySelectorAll('.count-up').forEach(element => {
+                const target = parseInt(element.dataset.target || 0);
+                element.innerText = target;
+            });
+            
+            // Mark page as loaded
+            document.body.classList.add('page-loaded');
+            
+            // Ensure smooth section transitions
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            });
+            
+            // Force all animations to run
+            setTimeout(() => {
+                document.body.classList.add('animations-enabled');
+            }, 100);
+            
+            // PROPERLY INITIALIZE BOTH CAROUSELS WITH TRUE INFINITE SCROLLING
+            
+            // 1. TESTIMONIAL CAROUSEL - ONLY ONE CARD VISIBLE AT A TIME
+            initializeTestimonialCarousel();
+            
+            // 2. INTELLIGENCE CAROUSEL - TWO CARDS VISIBLE AT A TIME
+            initializeIntelligenceCarousel();
+        });
+        
+        function initializeTestimonialCarousel() {
+            const carousel = document.querySelector('.testimonial-carousel');
+            const container = document.querySelector('.testimonial-container');
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.querySelector('.testimonial-nav-prev');
+            const nextBtn = document.querySelector('.testimonial-nav-next');
+            
+            if (!carousel || !container || slides.length === 0) {
+                console.error('Missing elements for testimonial carousel');
+                return;
+            }
+            
+            console.log('Initializing testimonial carousel with', slides.length, 'slides');
+            
+            // Remove any existing clones
+            document.querySelectorAll('.cloned-testimonial').forEach(el => el.remove());
+            
+            // Mark original slides
+            const originalSlides = Array.from(slides);
+            originalSlides.forEach(slide => slide.classList.add('original-slide'));
+            
+            // Clone first and last slides for infinite loop
+            const firstSlide = originalSlides[0].cloneNode(true);
+            const lastSlide = originalSlides[originalSlides.length - 1].cloneNode(true);
+            
+            firstSlide.classList.add('cloned-testimonial');
+            lastSlide.classList.add('cloned-testimonial');
+            
+            firstSlide.classList.remove('active');
+            lastSlide.classList.remove('active');
+            
+            // Add clones to appropriate positions
+            container.appendChild(firstSlide);
+            container.insertBefore(lastSlide, originalSlides[0]);
+            
+            // Set up state
+            let currentIndex = 0;
+            let isAnimating = false;
+            
+            // Set initial position (accounting for the clone at the beginning)
+            function updatePosition(animate = false) {
+                const slideWidth = carousel.clientWidth;
+                
+                if (animate) {
+                    container.style.transition = 'transform 0.5s ease-in-out';
+                } else {
+                    container.style.transition = 'none';
+                }
+                
+                container.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
+                
+                if (!animate) {
+                    // Force reflow
+                    container.offsetHeight;
+                    container.style.transition = 'transform 0.5s ease-in-out';
+                }
+                
+                // Update active classes
+                originalSlides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+                
+                // Also update active state for clones
+                firstSlide.classList.toggle('active', currentIndex === 0);
+                lastSlide.classList.toggle('active', currentIndex === originalSlides.length - 1);
+            }
+            
+            // Initialize position
+            updatePosition();
+            
+            // Add navigation handlers
+            function goToSlide(direction) {
+                if (isAnimating) return;
+                isAnimating = true;
+                
+                currentIndex = currentIndex + direction;
+                const totalSlides = originalSlides.length;
+                
+                // First update position with animation
+                updatePosition(true);
+                
+                // Wait for animation to complete
+                setTimeout(() => {
+                    // If we moved past boundaries, reset position instantly
+                    if (currentIndex < 0) {
+                        currentIndex = totalSlides - 1;
+                        updatePosition();
+                    } else if (currentIndex >= totalSlides) {
+                        currentIndex = 0;
+                        updatePosition();
+                    }
+                    
+                    isAnimating = false;
+                }, 500);
+            }
+            
+            // Add click handlers
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => goToSlide(-1));
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => goToSlide(1));
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                updatePosition();
+            });
+            
+            // Automatic rotation
+            let autoRotateTimer;
+            
+            function startAutoRotate() {
+                clearTimeout(autoRotateTimer);
+                autoRotateTimer = setTimeout(() => {
+                    if (!document.hidden) {
+                        goToSlide(1);
+                    }
+                    startAutoRotate();
+                }, 6000);
+            }
+            
+            // Start auto-rotation
+            startAutoRotate();
+            
+            // Pause on hover
+            carousel.addEventListener('mouseenter', () => clearTimeout(autoRotateTimer));
+            carousel.addEventListener('mouseleave', startAutoRotate);
+        }
+
+        // Make sure everything initializes properly
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - Initializing page elements');
+            
+            // Mark page as ready for JavaScript
+            document.body.dataset.ready = 'true';
+            
+            // Make sure counters are set
+            document.querySelectorAll('.count-up').forEach(element => {
+                const target = parseInt(element.dataset.target || 0);
+                element.innerText = target;
+            });
+            
+            // Initialize the carousels
+            initializeTestimonialCarousel();
+            initializeIntelligenceCarousel();
+            
+            // Mark page as fully loaded
+            document.body.classList.add('page-loaded');
+            document.body.classList.add('animations-enabled');
+            
+            console.log('Page initialization complete');
+        });
+
+        // Initialization on page load
+        function initializeShapes() {
+            // Clear existing shapes
+            shapesContainer.innerHTML = '';
+            
+            // Create 25 shapes (increased from previous count)
+            for (let i = 0; i < 25; i++) {
+                createShape(i);
+            }
+        }
+        
+        // Create a function to generate shapes with improved animations
+        function createShape(index) {
+            const shape = document.createElement('div');
+            shape.classList.add('floating-shape');
+            
+            // Choose shape type based on weighted distribution
+            const shapeItems = shapeDistribution.map(item => item.type);
+            const shapeWeights = shapeDistribution.map(item => item.weight);
+            const shapeType = getWeightedRandom(shapeItems, shapeWeights);
+            shape.classList.add(shapeType);
+            
+            // Add random color class
+            const colorClass = colorClasses[Math.floor(Math.random() * colorClasses.length)];
+            shape.classList.add(colorClass);
+            
+            // Add size class based on weighted distribution
+            const sizeItems = sizeDistribution.map(item => item.class);
+            const sizeWeights = sizeDistribution.map(item => item.weight);
+            const sizeClass = getWeightedRandom(sizeItems, sizeWeights);
+            shape.classList.add(sizeClass);
+            
+            // Get the entire document height for vertical distribution
+            const totalDocHeight = document.documentElement.scrollHeight;
+            const viewportHeight = window.innerHeight;
+            const viewportWidth = window.innerWidth;
+            
+            // Divide the page into a 5x5 grid for better distribution
+            // 5 columns and 5 rows for a total of 25 cells
+            const numRows = 5;
+            const numCols = 5;
+            
+            // Assign this shape to a specific cell in the grid
+            // This ensures even distribution across the page
+            const cellIndex = index % (numRows * numCols);
+            const rowIndex = Math.floor(cellIndex / numCols);
+            const colIndex = cellIndex % numCols;
+            
+            // Calculate page sections for better distribution
+            const numSections = Math.ceil(totalDocHeight / viewportHeight);
+            const sectionIndex = Math.floor(index / (numRows * numCols)) % numSections;
+            
+            // Calculate cell boundaries with some randomness
+            const cellWidth = viewportWidth / numCols;
+            const cellHeight = viewportHeight / numRows;
+            
+            // Calculate position within the assigned cell, adding randomness
+            // But ensuring it stays mostly within its assigned cell
+            const xPosBase = colIndex * cellWidth;
+            const yPosBase = (rowIndex * cellHeight) + (sectionIndex * viewportHeight);
+            
+            // Add randomness but keep within 60-80% of the cell to avoid clustering
+            const xRandom = Math.random() * 0.6 * cellWidth + 0.2 * cellWidth;
+            const yRandom = Math.random() * 0.6 * cellHeight + 0.2 * cellHeight;
+            
+            const xPos = xPosBase + xRandom;
+            const yPos = yPosBase + yRandom;
+            
+            console.log(`Shape ${index}: Position (${Math.round(xPos)}, ${Math.round(yPos)}) in grid cell [${colIndex}, ${rowIndex}], section ${sectionIndex}`);
+            
+            // Set initial position in pixels
+            shape.style.left = `${xPos}px`;
+            shape.style.top = `${yPos}px`;
+            
+            // Set initial opacity to 0 and fade in
+            shape.style.opacity = '0';
+            setTimeout(() => {
+                shape.style.opacity = '1';
+            }, 100 * (index % 5));
+            
+            // Set explicit z-index for proper layering
+            shape.style.zIndex = Math.floor(Math.random() * 3);
+            
+            // Add to container immediately
+            shapesContainer.appendChild(shape);
+            
+            // Movement properties with different speeds for more organic movement
+            const state = {
+                x: xPos,
+                y: yPos,
+                baseX: xPos,
+                baseY: yPos,
+                // Each shape has a unique movement pattern
+                amplitude: 10 + Math.random() * 30, // Range of movement from base position
+                period: 5 + Math.random() * 15, // Period of oscillation
+                phaseX: Math.random() * Math.PI * 2, // Random starting phase for X
+                phaseY: Math.random() * Math.PI * 2, // Random starting phase for Y
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 0.2 // Slower rotation
+            };
+            
+            // Animation that creates gentle floating with slight oscillation
+            function animateFloating() {
+                // Current time for oscillation calculation
+                const now = Date.now() / 1000;
+                
+                // Calculate new position with sine and cosine waves for more natural motion
+                // Each shape follows a slightly different path
+                const newX = state.baseX + Math.sin(now / state.period + state.phaseX) * state.amplitude;
+                const newY = state.baseY + Math.cos(now / (state.period * 1.3) + state.phaseY) * state.amplitude;
+                
+                // Update rotation
+                state.rotation += state.rotationSpeed;
+                
+                // Apply new positions with GSAP for smooth animation
+                gsap.to(shape, {
+                    x: newX - state.baseX,
+                    y: newY - state.baseY,
+                    rotation: state.rotation,
+                    duration: 2,
+                    ease: "power1.inOut"
+                });
+                
+                // Continue animation with RAF for smoother performance
+                requestAnimationFrame(animateFloating);
+            }
+            
+            // Start animation
+            animateFloating();
+            
+            return shape;
+        }
+
+        // Initialize key components
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - Initializing components');
+            
+            // 0. PAGE SETUP - Observe section visibility for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+            
+            document.querySelectorAll('.fade-in-step').forEach(step => {
+                observer.observe(step);
+            });
+            
+            // 1. FLOATING SHAPES - Create animated decorative elements
+            initializeShapes();
+            
+            // 2. INTELLIGENCE CAROUSEL - TWO CARDS VISIBLE AT A TIME
+            initializeIntelligenceCarousel();
+            
+            // 3. TESTIMONIAL CAROUSEL - ONE CARD AT A TIME
+            initializeTestimonialCarousel();
+            
+            console.log('Page initialization complete');
+        });
+
+        // Complete rewrite of the intelligence carousel with proper infinite scroll and arrow functionality
+        function initializeIntelligenceCarousel() {
+            console.log('Initializing intelligence carousel...');
+            
+            // Get DOM elements
+            const carousel = document.querySelector('.intelligence-carousel');
+            const container = document.querySelector('.intelligence-container');
+            const cards = document.querySelectorAll('.intelligence-card');
+            const prevBtn = document.querySelector('.intelligence-nav-prev');
+            const nextBtn = document.querySelector('.intelligence-nav-next');
+            
+            // Validate elements exist
+            if (!carousel || !container || cards.length === 0) {
+                console.error('Intelligence carousel elements not found!');
+                return;
+            }
+            
+            console.log(`Found ${cards.length} cards in intelligence carousel`);
+            
+            // Remove any existing clones to avoid duplicates
+            document.querySelectorAll('.intelligence-card.cloned').forEach(clone => {
+                clone.remove();
+            });
+            
+            // Store original cards and get their count
+            const originalCards = Array.from(cards);
+            const cardCount = originalCards.length;
+            
+            console.log(`Original card count: ${cardCount}`);
+            
+            // We'll create enough clones to fill the view on both sides for smooth infinite scroll
+            // Step 1: Create clones of all cards at the beginning and end
+            
+            // Clone cards for the beginning (prepend)
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('cloned', 'cloned-before');
+                container.insertBefore(clone, container.firstChild);
+                
+                // Initialize any count-up elements in the clone
+                clone.querySelectorAll('.count-up').forEach(el => {
+                    el.textContent = el.getAttribute('data-target') || '0';
+                });
+            });
+            
+            // Clone cards for the end (append)
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                clone.classList.add('cloned', 'cloned-after');
+                container.appendChild(clone);
+                
+                // Initialize any count-up elements in the clone
+                clone.querySelectorAll('.count-up').forEach(el => {
+                    el.textContent = el.getAttribute('data-target') || '0';
+                });
+            });
+            
+            // Apply gradient classes based on position
+            const allCards = document.querySelectorAll('.intelligence-card');
+            allCards.forEach((card, index) => {
+                // Use modulo to get position within set (0, 1, 2, 3)
+                const cardPosition = index % cardCount;
+                
+                // Remove any existing gradient classes
+                card.classList.remove('gradient-purple', 'gradient-blue', 'gradient-green', 'gradient-amber');
+                
+                // Add appropriate gradient class
+                switch(cardPosition) {
+                    case 0: card.classList.add('gradient-purple'); break;
+                    case 1: card.classList.add('gradient-blue'); break;
+                    case 2: card.classList.add('gradient-green'); break;
+                    case 3: card.classList.add('gradient-amber'); break;
+                }
+            });
+            
+            // Set up carousel state
+            let currentIndex = 0;
+            let isAnimating = false;
+            let cardWidth, cardMargin, totalCardWidth;
+            
+            // Function to calculate card dimensions
+            function updateCardDimensions() {
+                const firstCard = originalCards[0];
+                cardWidth = firstCard.offsetWidth;
+                cardMargin = parseInt(window.getComputedStyle(firstCard).marginRight) || 0;
+                totalCardWidth = cardWidth + cardMargin;
+                
+                console.log(`Card dimensions - Width: ${cardWidth}px, Margin: ${cardMargin}px, Total: ${totalCardWidth}px`);
+                
+                return totalCardWidth;
+            }
+            
+            // Calculate initial dimensions
+            updateCardDimensions();
+            
+            // Function to position the container
+            function positionContainer(animate = false) {
+                // Calculate position to show current index (accounting for clones at the beginning)
+                const position = (cardCount + currentIndex) * totalCardWidth;
+                
+                console.log(`Positioning container at index ${currentIndex}, position: ${position}px`);
+                
+                // Set transition style based on whether we want animation
+    </script>
+</body>
+</html>
